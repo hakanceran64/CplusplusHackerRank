@@ -32,75 +32,75 @@ using namespace std;
 
 class Box
 {
-    private:
-        int l, b, h;
+	private:
+		int l, b, h;
 
-    public:
-        Box()
+	public:
+		Box()
 		{
-            l = 0;
-            b = 0;
-            h = 0;
-        }
-        
-        Box(const Box& A)
+			l = 0;
+			b = 0;
+			h = 0;
+		}
+		
+		Box(const Box& A)
 		{
-            l = A.l;
-            b = A.b;
-            h = A.h;
-        }
+			l = A.l;
+			b = A.b;
+			h = A.h;
+		}
 
-        Box(int x, int y, int z)
+		Box(int x, int y, int z)
 		{
-            l = x;
-            b = y;
-            h = z;
-        }
+			l = x;
+			b = y;
+			h = z;
+		}
 
-        friend bool operator < (Box& A, Box& B)
+		friend bool operator < (Box& A, Box& B)
 		{
-            
-            bool result = false;
-            
-            if (A.l < B.l)
+			
+			bool result = false;
+			
+			if (A.l < B.l)
 			{
-                result = true;
-            }
+				result = true;
+			}
 			else if ((A.b < B.b) && (A.l == B.l))
 			{
-                result = true;
-            }
+				result = true;
+			}
 			else if ((A.h < B.h) && (A.l == B.l) && (A.b == B.b))
 			{
-                result = true;
-            }
-            
-            return result;
-        }
-        
-        friend ostream& operator << (ostream& out, Box& B)
+				result = true;
+			}
+			
+			return result;
+		}
+		
+		friend ostream& operator << (ostream& out, Box& B)
 		{
-            out << B.l << " " << B.b << " " << B.h;
-            
-            return out;
-        }
-    
-        int getLength ()
+			out << B.l << " " << B.b << " " << B.h;
+			
+			return out;
+		}
+	
+		int getLength ()
 		{
-            return l;
-        }
-        int getBreadth ()
+			return l;
+		}
+		int getBreadth ()
 		{
-            return b;
-        }
-        int getHeight ()
+			return b;
+		}
+		int getHeight ()
 		{
-            return h;
-        }
-        long long CalculateVolume()
+			return h;
+		}
+		long long CalculateVolume()
 		{
-            return (long long) l * b * h;
-        }
+			return (long long) l * b * h;
+		}
 };
 
 
@@ -108,59 +108,59 @@ void check2()
 {
 	int n;
 	
-	cin>>n;
+	cin >> n;
 	
 	Box temp;
 	
-	for(int i=0;i<n;i++)
+	for(int i = 0; i < n; i++)
 	{
 		int type;
-		cin>>type;
+		cin >> type;
 		
 		if(type ==1)
 		{
-			cout<<temp<<endl;
+			cout << temp << endl;
 		}
 		
 		if(type == 2)
 		{
-			int l,b,h;
-			cin>>l>>b>>h;
+			int l, b, h;
+			cin >> l >> b >> h;
 			
 			Box NewBox(l,b,h);
 			
-			temp=NewBox;
+			temp = NewBox;
 			
-			cout<<temp<<endl;
+			cout << temp << endl;
 		}
 		
-		if(type==3)
+		if(type == 3)
 		{
-			int l,b,h;
-			cin>>l>>b>>h;
+			int l, b, h;
+			cin >> l >> b >> h;
 			
-			Box NewBox(l,b,h);
+			Box NewBox(l, b, h);
 			
 			if(NewBox<temp)
 			{
-				cout<<"Lesser\n";
+				cout << "Lesser" << endl;
 			}
 			else
 			{
-				cout<<"Greater\n";
+				cout << "Greater" << endl;
 			}
 		}
 		
-		if(type==4)
+		if(type == 4)
 		{
-			cout<<temp.CalculateVolume()<<endl;
+			cout << temp.CalculateVolume() << endl;
 		}
 		
-		if(type==5)
+		if(type == 5)
 		{
 			Box NewBox(temp);
 			
-			cout<<NewBox<<endl;
+			cout << NewBox << endl;
 		}
 
 	}
