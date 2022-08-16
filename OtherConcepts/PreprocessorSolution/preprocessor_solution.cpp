@@ -5,8 +5,6 @@
  * 
  * */
 
-/* Enter your macros here */
-
 #define toStr(S) #S
 
 #define io(v) cin >> v
@@ -26,11 +24,13 @@ using namespace std;
 #error Missing preprocessor definitions
 #endif 
 
-FUNCTION(minimum, <)
-FUNCTION(maximum, >)
+FUNCTION(minimum , <)
+FUNCTION(maximum , >)
 
 int main(){
-	int n; cin >> n;
+	int n;
+	
+	cin >> n;
 
 	vector<int> v(n);
 
@@ -48,8 +48,7 @@ int main(){
 
 	int ans = mx - mn;
 
-	cout << toStr(Result =) <<' '<< ans;
+	cout << toStr(Result =) << ' ' << ans;
 
 	return 0;
-
 }
